@@ -1,0 +1,177 @@
+:root {
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --accent: #5b21b6;
+  --accent-soft: #ede9fe;
+  --err: #b91c1c;
+  --ok: #15803d;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.org-shell {
+  padding: 16px;
+  max-width: 520px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.org-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.org-title {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.org-locale {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.org-select {
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  padding: 4px 8px;
+}
+
+.org-hint {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.org-input {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.org-run {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+}
+
+.org-run:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.org-error {
+  color: var(--err);
+  font-size: 0.9rem;
+}
+
+.org-section {
+  margin-top: 20px;
+}
+
+.org-section h2,
+.org-section h3 {
+  font-size: 0.95rem;
+  margin: 12px 0 8px;
+}
+
+.org-pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.85rem;
+}
+
+.org-pre-small {
+  white-space: pre-wrap;
+  font-size: 0.75rem;
+  margin: 6px 0 0;
+  background: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.org-planner {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.org-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.org-steps li {
+  margin-bottom: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--accent-soft);
+}
+
+.org-step-err {
+  background: #fee2e2 !important;
+}
+
+.org-step-id {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.org-ms {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.org-agents {
+  padding-left: 1rem;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.org-agents li {
+  margin-bottom: 8px;
+}
+
+.org-agents code {
+  font-size: 0.75rem;
+  display: block;
+  color: var(--accent);
+}
+
+.org-agent-title {
+  display: block;
+  color: var(--muted);
+}
