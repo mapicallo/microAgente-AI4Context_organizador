@@ -51,7 +51,7 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 | **Fecha** | 2026-05-11 |
 | **Quién** | implementación asistida |
 | **Qué se hizo** | Fase 2: interfaz `Planner`, `rulesPlanner`, interpolación en `resolveStepInputs`; tests Vitest (`npm test`). |
-| **Commit / PR** | _(tras push)_ |
+| **Commit / PR** | `416bb09` |
 
 ---
 
