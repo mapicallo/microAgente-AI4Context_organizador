@@ -51,7 +51,7 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 | **Fecha** | 2026-05-10 |
 | **Quién** | implementación asistida |
 | **Qué se hizo** | Fases 0–1: contrato agente borrador, tipos Mission; IndexedDB `missions`; `runMission` persiste antes/después; UI lista misiones + resultado última misión. |
-| **Commit / PR** | _(tras push)_ |
+| **Commit / PR** | `edebe26` |
 
 ---
 
