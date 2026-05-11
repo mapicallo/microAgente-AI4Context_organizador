@@ -35,7 +35,7 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 |------|----------------------------------|-----------|----------------------------|
 | 0    | Modelo + Agent Contract borrador | `hecho` | `src/contracts/agentContract.ts`, `src/mission/types.ts` |
 | 1    | Mission Engine + IndexedDB       | `hecho` | `src/storage/missionsDb.ts`, `src/mission/runMission.ts`, panel lista |
-| 2    | Planner modular                  | `pendiente` |                            |
+| 2    | Planner modular                  | `hecho` | `Planner`, `planners/rulesPlanner.ts`, Vitest |
 | 3    | Connector API (ej. OpenAI-compat)| `pendiente` |                            |
 | 4    | Connector web_tab (demo curada)  | `pendiente` |                            |
 | 5    | Seguridad / trust / permisos UI  | `pendiente` |                            |
@@ -48,10 +48,10 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 
 | Campo | Valor |
 |-------|--------|
-| **Fecha** | 2026-05-10 |
+| **Fecha** | 2026-05-11 |
 | **Quién** | implementación asistida |
-| **Qué se hizo** | Fases 0–1: contrato agente borrador, tipos Mission; IndexedDB `missions`; `runMission` persiste antes/después; UI lista misiones + resultado última misión. |
-| **Commit / PR** | `edebe26` |
+| **Qué se hizo** | Fase 2: interfaz `Planner`, `rulesPlanner`, interpolación en `resolveStepInputs`; tests Vitest (`npm test`). |
+| **Commit / PR** | _(tras push)_ |
 
 ---
 
@@ -59,7 +59,7 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 
 _Escribir aquí la **única** acción siguiente para no dispersarse._
 
-> **Siguiente paso:** Fase 2 — extraer interfaz `Planner` y mover `planFromTask` a `planners/rulesPlanner.ts`; tests unitarios mínimos del planificador.
+> **Siguiente paso:** Fase 3 — connector API (OpenAI-compatible u otro): UI guardar API key en `chrome.storage`, un agente demo que llame `fetch`, artefacto persistido en misión.
 
 ---
 

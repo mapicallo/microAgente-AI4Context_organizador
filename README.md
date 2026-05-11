@@ -20,6 +20,12 @@ Carga la carpeta `dist/` en `chrome://extensions` (modo desarrollador) tras `npm
 - Texto con **mayúsculas** / **uppercase** → eco + `ai4context.ma.uppercase`
 - **lista** / **lines** → `ai4context.ma.split_lines`
 
+## Tests
+
+```bash
+npm test
+```
+
 ## Empaquetado
 
 ```bash

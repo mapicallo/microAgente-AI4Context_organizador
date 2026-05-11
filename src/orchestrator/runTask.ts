@@ -1,5 +1,7 @@
+import { rulesPlanner } from '../planners/rulesPlanner';
+import type { Planner } from '../planning/types';
 import { getAgent } from './registry';
-import { planFromTask, resolveStepInputs } from './planFromTask';
+import { resolveStepInputs } from './resolveStepInputs';
 import type {
   OrchestratorTask,
   StepResult,
@@ -33,11 +35,18 @@ function synthesizeSummary(
   }
 }
 
+export type RunTaskOptions = {
+  /** Por defecto `rulesPlanner` (reglas sin LLM). */
+  planner?: Planner;
+};
+
 export async function runTask(
   task: OrchestratorTask,
   signal: AbortSignal,
+  options?: RunTaskOptions,
 ): Promise<TaskRunResult> {
-  const plan = planFromTask(task);
+  const planner = options?.planner ?? rulesPlanner;
+  const plan = planner.plan(task);
   const stepResults: StepResult[] = [];
   const outputs: Record<string, unknown>[] = [];
 
@@ -57,7 +66,7 @@ export async function runTask(
       break;
     }
 
-    const resolvedInput = resolveStepInputs(i, step.input, outputs);
+    const resolvedInput = resolveStepInputs(step.input, outputs);
 
     try {
       signal.throwIfAborted();
