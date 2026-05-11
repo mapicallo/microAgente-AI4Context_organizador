@@ -33,8 +33,8 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 
 | Fase | Nombre breve                     | Estado    | Notas / enlaces PR-commit |
 |------|----------------------------------|-----------|----------------------------|
-| 0    | Modelo + Agent Contract borrador | `pendiente` |                            |
-| 1    | Mission Engine + IndexedDB       | `pendiente` |                            |
+| 0    | Modelo + Agent Contract borrador | `hecho` | `src/contracts/agentContract.ts`, `src/mission/types.ts` |
+| 1    | Mission Engine + IndexedDB       | `hecho` | `src/storage/missionsDb.ts`, `src/mission/runMission.ts`, panel lista |
 | 2    | Planner modular                  | `pendiente` |                            |
 | 3    | Connector API (ej. OpenAI-compat)| `pendiente` |                            |
 | 4    | Connector web_tab (demo curada)  | `pendiente` |                            |
@@ -48,10 +48,10 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 
 | Campo | Valor |
 |-------|--------|
-| **Fecha** | _YYYY-MM-DD_ |
-| **Quién** | _nombre o “solo”_ |
-| **Qué se hizo** | _2–5 líneas_ |
-| **Commit / PR** | _hash o enlace_ |
+| **Fecha** | 2026-05-10 |
+| **Quién** | implementación asistida |
+| **Qué se hizo** | Fases 0–1: contrato agente borrador, tipos Mission; IndexedDB `missions`; `runMission` persiste antes/después; UI lista misiones + resultado última misión. |
+| **Commit / PR** | _(tras push)_ |
 
 ---
 
@@ -59,7 +59,7 @@ Referencia de fases: ver plan maestro acordado (Mission Engine, connectors API/w
 
 _Escribir aquí la **única** acción siguiente para no dispersarse._
 
-> **Siguiente paso:** _rellenar al cerrar cada sesión_
+> **Siguiente paso:** Fase 2 — extraer interfaz `Planner` y mover `planFromTask` a `planners/rulesPlanner.ts`; tests unitarios mínimos del planificador.
 
 ---
 

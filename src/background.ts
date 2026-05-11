@@ -1,6 +1,7 @@
 import { registerStubAgents } from './agents';
+import { runMission } from './mission/runMission';
 import { listAgentManifests } from './orchestrator/registry';
-import { runTask } from './orchestrator/runTask';
+import { listMissions } from './storage/missionsDb';
 import type { BackgroundToPanelMessage, PanelToBackgroundMessage } from './messages';
 
 registerStubAgents();
@@ -34,20 +35,31 @@ chrome.runtime.onMessage.addListener(
       return false;
     }
 
+    if (msg.type === 'ORG_LIST_MISSIONS') {
+      void (async () => {
+        try {
+          const missions = await listMissions(40);
+          sendResponse({ type: 'ORG_LIST_MISSIONS_RESULT', payload: { missions } });
+        } catch (e) {
+          console.error('[organizer] listMissions', e);
+          sendResponse({ type: 'ORG_LIST_MISSIONS_RESULT', payload: { missions: [] } });
+        }
+      })();
+      return true;
+    }
+
     if (msg.type === 'ORG_RUN_TASK') {
       void (async () => {
-        const taskId = crypto.randomUUID();
         const controller = new AbortController();
         try {
-          const result = await runTask(
+          const mission = await runMission(
             {
-              taskId,
               userText: msg.payload.userText,
               locale: msg.payload.locale,
             },
             controller.signal,
           );
-          sendResponse({ type: 'ORG_RUN_TASK_RESULT', payload: result });
+          sendResponse({ type: 'ORG_RUN_TASK_RESULT', payload: mission });
         } catch (e) {
           const message = e instanceof Error ? e.message : String(e);
           sendResponse({ type: 'ORG_RUN_TASK_ERROR', payload: { message } });

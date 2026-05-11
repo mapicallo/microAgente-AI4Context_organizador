@@ -5,7 +5,9 @@
 
 export type Locale = 'es' | 'en';
 
-/** Petición de alto nivel desde la UI */
+/**
+ * Petición en vuelo al ejecutar un plan (ligada a `missionId` en Mission Engine).
+ */
 export type OrchestratorTask = {
   taskId: string;
   userText: string;

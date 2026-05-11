@@ -1,6 +1,6 @@
 # MicroAgente-AI4Context (organizador)
 
-Extensión Chromium (MV3) que implementa el **organizador** del ecosistema micro-agentes AI4Context: planifica y ejecuta pasos contra agentes registrados en el service worker (local-first, sin backend obligatorio).
+Extensión Chromium (MV3) que implementa el **organizador** del ecosistema micro-agentes AI4Context: planifica y ejecuta pasos contra agentes registrados en el service worker (local-first, sin backend obligatorio). Las **misiones** se guardan en **IndexedDB** del navegador y aparecen en el panel como historial reciente.
 
 **Seguimiento del plan (tras pausas o urgencias):** [`docs/PLAN_SEGUIMIENTO.md`](docs/PLAN_SEGUIMIENTO.md) — estado por fase, siguiente paso único, bloqueos.
 
